@@ -282,6 +282,7 @@ ul { list-style: none; }
   font-size: .68rem; font-weight: 700; letter-spacing: .3em;
   text-transform: uppercase; color: var(--ac);
   margin-bottom: 1rem; font-family: var(--f-display); opacity: .85;
+  display: flex; align-items: center; justify-content: center; gap: .5rem;
 }
 .hero h1 {
   font-family: var(--f-display);
@@ -313,7 +314,7 @@ ul { list-style: none; }
   transform: translateY(-2px) scale(1.02);
   box-shadow: 0 8px 32px rgba(0,191,255,.45);
 }
-.btn-surprise .dice { font-size: 1.2rem; }
+.btn-surprise .dice { font-size: 1.2rem; display: inline-flex; }
 .btn-ghost {
   display: inline-flex; align-items: center; gap: .5rem;
   padding: .78rem 1.5rem; border-radius: 50px;
@@ -391,7 +392,8 @@ ul { list-style: none; }
   box-shadow: 0 10px 30px rgba(0,0,0,.4);
 }
 .cat-card:hover::before { opacity: .14; }
-.cat-icon { font-size: 1.9rem; margin-bottom: .5rem; }
+.cat-icon { font-size: 1.9rem; margin-bottom: .5rem; display: flex; align-items: center; justify-content: center; color: var(--color, var(--gold)); }
+.cat-icon svg { width: 28px; height: 28px; }
 .cat-name {
   font-size: .74rem; font-weight: 700; color: var(--slate-l);
   letter-spacing: .04em; font-family: var(--f-display); text-transform: uppercase;
@@ -452,7 +454,8 @@ ul { list-style: none; }
   line-height: 1.3; margin-top: .5rem; text-transform: uppercase; letter-spacing: .3px;
 }
 .book-cover-placeholder .ph-author { font-size: .66rem; color: var(--slate); margin-top: .25rem; font-family: var(--mono); }
-.placeholder-icon { font-size: 2rem; opacity: .5; }
+.placeholder-icon { font-size: 2rem; opacity: .5; display: flex; align-items: center; justify-content: center; color: var(--slate-l); }
+.placeholder-icon svg { width: 34px; height: 34px; }
 
 .book-fav-btn {
   position: absolute; top: .45rem; right: .45rem;
@@ -566,13 +569,15 @@ ul { list-style: none; }
 .error-state {
   text-align: center; padding: 4rem 2rem;
 }
-.error-state .err-icon { font-size: 3rem; margin-bottom: 1rem; }
+.error-state .err-icon { display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; color: var(--red); }
+.error-state .err-icon svg { width: 44px; height: 44px; }
 .error-state h3 { font-family: var(--f-display); font-size: 1.1rem; color: var(--cream); margin-bottom: .5rem; text-transform: uppercase; letter-spacing: .5px; }
 .error-state p { color: var(--slate); font-size: .9rem; margin-bottom: 1.5rem; }
 
 /* Empty state */
 .empty-state { text-align: center; padding: 4rem 2rem; }
-.empty-state .empty-icon { font-size: 3.5rem; margin-bottom: 1rem; opacity: .6; }
+.empty-state .empty-icon { display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; opacity: .6; color: var(--slate-l); }
+.empty-state .empty-icon svg { width: 50px; height: 50px; }
 .empty-state h3 { font-family: var(--f-display); font-size: 1.1rem; color: var(--cream); margin-bottom: .5rem; text-transform: uppercase; letter-spacing: .5px; }
 .empty-state p { color: var(--slate); font-size: .9rem; }
 
@@ -638,7 +643,9 @@ ul { list-style: none; }
 }
 .dstat-lbl { font-size: .64rem; text-transform: uppercase; letter-spacing: .1em; color: var(--slate); margin-bottom: .2rem; font-family: var(--f-display); }
 .dstat-val { font-size: .92rem; font-weight: 700; color: var(--cream); font-family: var(--mono); }
-.detail-actions { display: flex; gap: .7rem; flex-wrap: wrap; }
+.detail-actions { display: flex; gap: .7rem; flex-wrap: wrap; align-items: center; }
+.detail-noread { font-size: .82rem; color: var(--slate); display: flex; align-items: center; gap: .45rem; }
+.detail-noread svg { flex-shrink: 0; color: var(--slate); }
 .btn-read {
   display: inline-flex; align-items: center; gap: .55rem;
   padding: .82rem 1.9rem; border-radius: 50px;
@@ -900,7 +907,8 @@ ul { list-style: none; }
   align-items: center; justify-content: center; gap: 1rem;
   padding: 2rem; text-align: center; color: var(--reader-text);
 }
-.reader-error .err-icon { font-size: 2.5rem; }
+.reader-error .err-icon { display: flex; align-items: center; justify-content: center; color: var(--gold); opacity: .8; }
+.reader-error .err-icon svg { width: 42px; height: 42px; }
 .reader-error p { font-size: .88rem; opacity: .7; max-width: 380px; line-height: 1.6; }
 
 /* ============================================================
@@ -965,7 +973,11 @@ ul { list-style: none; }
 }
 .toast.success { border-color: rgba(57,255,20,.3); }
 .toast.error { border-color: rgba(255,68,101,.3); }
-.toast-icon { font-size: 1rem; flex-shrink: 0; }
+.toast-icon { flex-shrink: 0; display: flex; align-items: center; }
+.toast-icon svg { width: 16px; height: 16px; }
+.toast.success .toast-icon { color: var(--success); }
+.toast.error .toast-icon { color: var(--red); }
+.toast.info .toast-icon { color: var(--ac); }
 @keyframes toast-in {
   from { opacity: 0; transform: translateY(12px) scale(.95); }
   to { opacity: 1; transform: none; }
@@ -1018,7 +1030,7 @@ ul { list-style: none; }
   padding: 1rem 1.2rem; border-bottom: 1px solid rgba(198,168,92,.1);
   display: flex; align-items: center; justify-content: space-between;
 }
-.ann-header h3 { font-family: var(--f-display); font-size: .88rem; color: var(--gold); text-transform: uppercase; letter-spacing: .5px; }
+.ann-header h3 { font-family: var(--f-display); font-size: .88rem; color: var(--gold); text-transform: uppercase; letter-spacing: .5px; display: flex; align-items: center; gap: .5rem; }
 .ann-list { flex: 1; overflow-y: auto; padding: 1rem; }
 .ann-empty { font-size: .82rem; color: var(--slate); text-align: center; padding: 2rem 1rem; line-height: 1.6; }
 .ann-item {
@@ -1119,7 +1131,7 @@ ul { list-style: none; }
       </button>
       <!-- Surprise me -->
       <button class="btn-primary" id="surpriseBtn" aria-label="Show me a random book">
-        <span class="dice">🎲</span>
+        <span class="dice" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"></rect><circle cx="8" cy="8" r="1.2" fill="currentColor" stroke="none"></circle><circle cx="16" cy="8" r="1.2" fill="currentColor" stroke="none"></circle><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"></circle><circle cx="8" cy="16" r="1.2" fill="currentColor" stroke="none"></circle><circle cx="16" cy="16" r="1.2" fill="currentColor" stroke="none"></circle></svg></span>
         <span class="desktop-only">Surprise Me</span>
       </button>
     </div>
@@ -1137,12 +1149,12 @@ ul { list-style: none; }
   <!-- Hero -->
   <section class="hero">
     <div class="container">
-      <p class="hero-eyebrow">📚 Millions of free books</p>
+      <p class="hero-eyebrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg> Millions of free books</p>
       <h1>Read anything.<br><em>For free.</em> Forever.</h1>
       <p class="hero-sub">Discover and read public domain classics, academic works, and rare texts from Open Library and Project Gutenberg — right in your browser.</p>
       <div class="hero-actions">
         <button class="btn-surprise" id="homeSupriseBtn" aria-label="Show me a random book">
-          <span class="dice">🎲</span> Surprise Me
+          <span class="dice" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"></rect><circle cx="8" cy="8" r="1.2" fill="currentColor" stroke="none"></circle><circle cx="16" cy="8" r="1.2" fill="currentColor" stroke="none"></circle><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"></circle><circle cx="8" cy="16" r="1.2" fill="currentColor" stroke="none"></circle><circle cx="16" cy="16" r="1.2" fill="currentColor" stroke="none"></circle></svg></span> Surprise Me
         </button>
         <button class="btn-ghost" onclick="document.getElementById('mainSearch').focus()">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -1226,7 +1238,7 @@ ul { list-style: none; }
       <div id="resultsSpinner" class="spinner hidden"></div>
       <div id="resultsError" class="error-state hidden"></div>
       <div id="resultsEmpty" class="empty-state hidden">
-        <div class="empty-icon">🔍</div>
+        <div class="empty-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
         <h3>No books found</h3>
         <p>Try a different search term or browse the categories below.</p>
       </div>
@@ -1296,7 +1308,7 @@ ul { list-style: none; }
       <p>Opening the book…</p>
     </div>
     <div id="readerError" class="reader-error hidden">
-      <div class="err-icon">📕</div>
+      <div class="err-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path><line x1="5" y1="9" x2="8" y2="9" stroke-width="1.5"></line></svg></div>
       <p id="readerErrorMsg">This book's text isn't available online yet. Try another format or come back later.</p>
       <button class="btn-sm primary" style="margin-top:1rem;" onclick="exitReader()">← Back to details</button>
     </div>
@@ -1328,7 +1340,7 @@ ul { list-style: none; }
   <!-- Annotations panel -->
   <aside class="annotations-panel" id="annotationsPanel" role="complementary" aria-label="Your annotations">
     <div class="ann-header">
-      <h3>✏️ Annotations</h3>
+      <h3><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg> Annotations</h3>
       <button class="reader-btn" onclick="toggleAnnotations()" aria-label="Close annotations">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
       </button>
@@ -1374,13 +1386,13 @@ ul { list-style: none; }
 
     <!-- Reading stats -->
     <div class="stats-card" id="readingStats">
-      <h3>📊 Reading Statistics</h3>
+      <h3><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg> Reading Statistics</h3>
       <div class="stats-row" id="statsRow"></div>
     </div>
 
     <div class="books-grid" id="favGrid" aria-live="polite" aria-label="Favourite books"></div>
     <div class="empty-state hidden" id="favEmpty">
-      <div class="empty-icon">💝</div>
+      <div class="empty-icon"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></div>
       <h3>Your shelf is empty</h3>
       <p>Tap the heart icon on any book to save it here.</p>
     </div>
@@ -1426,6 +1438,12 @@ const CONFIG = {
   OL_WORK:     'https://openlibrary.org/works/{id}.json',
   GUT_SEARCH:  'https://gutendex.com/books',
   WORDS_PER_SPREAD: 600, /* approximate words per two-page spread */
+  /* CORS proxies tried in order when a direct text fetch is blocked */
+  CORS_PROXIES: [
+    url => url,
+    url => `https://corsproxy.io/?url=${encodeURIComponent(url)}`,
+    url => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
+  ],
 };
 
 /* ============================================================
@@ -1445,6 +1463,31 @@ async function apiFetch(url, timeout = 12000) {
     clearTimeout(timer);
     throw e;
   }
+}
+
+/**
+ * Fetch plain text, retrying through CORS proxies if the direct request
+ * is blocked (many book-text hosts like gutenberg.org don't send CORS
+ * headers, so a browser fetch() straight to them silently fails).
+ */
+async function fetchTextWithFallback(url, timeout = 15000) {
+  for (const buildUrl of CONFIG.CORS_PROXIES) {
+    const target = buildUrl(url);
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), timeout);
+    try {
+      const res = await fetch(target, { signal: ctrl.signal });
+      clearTimeout(timer);
+      if (res.ok) {
+        const text = await res.text();
+        if (text && text.length > 200) return text;
+      }
+    } catch(e) {
+      clearTimeout(timer);
+      /* try next proxy */
+    }
+  }
+  return null;
 }
 
 /** Escape HTML */
@@ -1467,13 +1510,23 @@ function debounce(fn, ms) {
   return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), ms); };
 }
 
+/* ============================================================
+   ICONS — inline SVG replacements for emoji, all currentColor
+   ============================================================ */
+const ICONS = {
+  success: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>',
+  error:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>',
+  info:    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>',
+  dice:    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"></rect><circle cx="8" cy="8" r="1.2" fill="currentColor" stroke="none"></circle><circle cx="16" cy="8" r="1.2" fill="currentColor" stroke="none"></circle><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"></circle><circle cx="8" cy="16" r="1.2" fill="currentColor" stroke="none"></circle><circle cx="16" cy="16" r="1.2" fill="currentColor" stroke="none"></circle></svg>',
+};
+
 /** Show toast notification */
 function toast(msg, type = 'info', duration = 3000) {
-  const icons = { success:'✅', error:'❌', info:'📌' };
+  const icon = ICONS[type] || ICONS.info;
   const el = document.createElement('div');
   el.className = `toast ${type}`;
   el.setAttribute('role', 'status');
-  el.innerHTML = `<span class="toast-icon">${icons[type] || '📌'}</span><span>${esc(msg)}</span>`;
+  el.innerHTML = `<span class="toast-icon">${icon}</span><span>${esc(msg)}</span>`;
   document.getElementById('toastContainer').appendChild(el);
   setTimeout(() => el.remove(), duration);
 }
@@ -1516,7 +1569,7 @@ function coverPlaceholder(title, author) {
   const hue = [...(title || 'book')].reduce((a,c) => a + c.charCodeAt(0), 0) % 360;
   return `
     <div class="book-cover-placeholder" style="background:linear-gradient(135deg,hsl(${hue},25%,18%),hsl(${(hue+40)%360},20%,14%))">
-      <span class="placeholder-icon">📖</span>
+      <span class="placeholder-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg></span>
       <div class="ph-title">${esc(truncate(title, 40))}</div>
       <div class="ph-author">${esc(truncate(author, 25))}</div>
     </div>`;
@@ -1625,18 +1678,18 @@ function goBack() {
    CATEGORIES
    ============================================================ */
 const CATEGORIES = [
-  { name: 'Adventure', icon: '⚔️',  color: '#C6A85C', query: 'adventure' },
-  { name: 'Romance',   icon: '💕',  color: '#ff6a9d', query: 'romance'   },
-  { name: 'Mystery',   icon: '🔍',  color: '#00BFFF', query: 'mystery detective' },
-  { name: 'Science',   icon: '🔬',  color: '#39ff14', query: 'science'   },
-  { name: 'Philosophy',icon: '🧠',  color: '#C6A85C', query: 'philosophy' },
-  { name: 'History',   icon: '📜',  color: '#94A3B8', query: 'history'   },
-  { name: 'Poetry',    icon: '🌹',  color: '#C6A85C', query: 'poetry'    },
-  { name: 'Horror',    icon: '👻',  color: '#7A4A9B', query: 'horror gothic' },
-  { name: 'Travel',    icon: '🌍',  color: '#00BFFF', query: 'travel exploration' },
-  { name: 'Biography', icon: '👤',  color: '#FFB020', query: 'biography memoir' },
-  { name: 'Children',  icon: '🧒',  color: '#00BFFF', query: 'children fairy tales' },
-  { name: 'Drama',     icon: '🎭',  color: '#ff6a9d', query: 'drama plays Shakespeare' },
+  { name: 'Adventure', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 17.5L3 6V3h3l11.5 11.5"></path><path d="M13 19l6-6"></path><path d="M16 16l4 4"></path><path d="M19 21l2-2"></path></svg>', color: '#C6A85C', query: 'adventure' },
+  { name: 'Romance',   icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>', color: '#ff6a9d', query: 'romance' },
+  { name: 'Mystery',   icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>', color: '#00BFFF', query: 'mystery detective' },
+  { name: 'Science',   icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 2v6L4 20a1 1 0 0 0 1 2h14a1 1 0 0 0 1-2L15 8V2"></path><path d="M9 2h6"></path><path d="M8.5 14h7"></path></svg>', color: '#39ff14', query: 'science' },
+  { name: 'Philosophy',icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M12 2a7 7 0 0 0-4 12.7c.5.4.8 1 .8 1.6v.7h6.4v-.7c0-.6.3-1.2.8-1.6A7 7 0 0 0 12 2z"></path></svg>', color: '#C6A85C', query: 'philosophy' },
+  { name: 'History',   icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path><line x1="9" y1="7" x2="15" y2="7"></line></svg>', color: '#94A3B8', query: 'history' },
+  { name: 'Poetry',    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 4L9 15"></path><path d="M20 4c-4 0-11 1-14 6-1.7 2.8-1 6-1 6s3.2.7 6-1c5-3 6-10 6-10z"></path><path d="M8 16l-4 4"></path></svg>', color: '#C6A85C', query: 'poetry' },
+  { name: 'Horror',    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 10h.01"></path><path d="M15 10h.01"></path><path d="M12 2a8 8 0 0 0-8 8v10.5c0 .5.4.9.9.7l2-1 1.6 1.6c.3.3.8.3 1.1 0L12 20l2.4 1.8c.3.3.8.3 1.1 0l1.6-1.6 2 1c.5.2.9-.2.9-.7V10a8 8 0 0 0-8-8z"></path></svg>', color: '#7A4A9B', query: 'horror gothic' },
+  { name: 'Travel',    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>', color: '#00BFFF', query: 'travel exploration' },
+  { name: 'Biography', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>', color: '#FFB020', query: 'biography memoir' },
+  { name: 'Children',  icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>', color: '#00BFFF', query: 'children fairy tales' },
+  { name: 'Drama',     icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 3a2 2 0 0 1 2 2c0 4-3 5-3 9a4 4 0 0 1-8 0c0-4-3-5-3-9a2 2 0 0 1 2-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>', color: '#ff6a9d', query: 'drama plays Shakespeare' },
 ];
 
 function renderCategories() {
@@ -1706,7 +1759,7 @@ async function searchBooks(query, page = 1, append = false) {
       document.getElementById('resultsGrid').innerHTML = '';
       document.getElementById('resultsError').classList.remove('hidden');
       document.getElementById('resultsError').innerHTML = `
-        <div class="err-icon">⚠️</div>
+        <div class="err-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div>
         <h3>Couldn't load results</h3>
         <p>${navigator.onLine ? 'The Open Library API had an issue. Try again in a moment.' : 'You appear to be offline.'}</p>
         <button class="btn-sm primary" onclick="searchBooks(${JSON.stringify(STATE.searchQuery)})">Retry</button>`;
@@ -1717,7 +1770,11 @@ async function searchBooks(query, page = 1, append = false) {
 }
 
 function loadMoreResults() {
-  searchBooks(STATE.searchQuery, STATE.searchPage + 1, true);
+  if (STATE.searchSource === 'gutenberg') {
+    searchGutenberg(STATE.searchQuery, true);
+  } else {
+    searchBooks(STATE.searchQuery, STATE.searchPage + 1, true);
+  }
 }
 
 /** Normalize Open Library book doc to our common schema */
@@ -1742,18 +1799,54 @@ function normalizeOLBook(doc) {
 async function searchGutenberg(query, append = false) {
   STATE.searchSource = 'gutenberg';
   STATE.searchQuery = query;
+  showView('results');
+
+  document.getElementById('resultsTitle').textContent = `"${query}" · Readable now`;
+  document.getElementById('resultsError').classList.add('hidden');
+  document.getElementById('resultsEmpty').classList.add('hidden');
+  document.getElementById('loadMoreBtn').classList.add('hidden');
 
   if (!append) {
+    STATE.searchResults = [];
+    STATE.gutPage = 1;
     document.getElementById('resultsGrid').innerHTML = skeletonCards(12);
+    document.getElementById('resultsCount').textContent = '';
+  } else {
+    STATE.gutPage = (STATE.gutPage || 1) + 1;
   }
+  document.getElementById('resultsSpinner').classList.toggle('hidden', !append);
 
-  const url = `${CONFIG.GUT_SEARCH}?search=${encodeURIComponent(query)}`;
+  const pageParam = STATE.gutPage && STATE.gutPage > 1 ? `&page=${STATE.gutPage}` : '';
+  const url = `${CONFIG.GUT_SEARCH}?search=${encodeURIComponent(query)}${pageParam}`;
+
   try {
     const data = await apiFetch(url);
     const books = (data.results || []).map(normalizeGutBook);
-    return books;
-  } catch {
-    return [];
+    STATE.searchResults = append ? [...STATE.searchResults, ...books] : books;
+
+    document.getElementById('resultsCount').textContent =
+      `${(data.count || books.length).toLocaleString()} results`;
+
+    if (!append) document.getElementById('resultsGrid').innerHTML = '';
+    if (!books.length && !append) {
+      document.getElementById('resultsEmpty').classList.remove('hidden');
+      return;
+    }
+    books.forEach(b => document.getElementById('resultsGrid').appendChild(createBookCard(b)));
+
+    if (data.next) document.getElementById('loadMoreBtn').classList.remove('hidden');
+  } catch(e) {
+    if (!append) {
+      document.getElementById('resultsGrid').innerHTML = '';
+      document.getElementById('resultsError').classList.remove('hidden');
+      document.getElementById('resultsError').innerHTML = `
+        <div class="err-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div>
+        <h3>Couldn't load results</h3>
+        <p>${navigator.onLine ? 'Project Gutenberg\'s catalog had an issue. Try again in a moment.' : 'You appear to be offline.'}</p>
+        <button class="btn-sm primary" onclick="searchGutenberg(${JSON.stringify(STATE.searchQuery)})">Retry</button>`;
+    }
+  } finally {
+    document.getElementById('resultsSpinner').classList.add('hidden');
   }
 }
 
@@ -1780,6 +1873,29 @@ function normalizeGutBook(g) {
     source:   'gutenberg',
     readCount: g.download_count || 0,
   };
+}
+
+/**
+ * Look up a readable Project Gutenberg edition of a book found on
+ * Open Library, matched by title (and author when possible). Open
+ * Library itself doesn't host full text, so this is what actually
+ * makes "Read Now" work for books discovered there.
+ */
+async function findGutenbergEdition(title, author) {
+  if (!title) return null;
+  try {
+    const data = await apiFetch(`${CONFIG.GUT_SEARCH}?search=${encodeURIComponent(title)}`);
+    const results = (data.results || []).map(normalizeGutBook).filter(b => b.textUrl);
+    if (!results.length) return null;
+    if (author) {
+      const authorLast = author.trim().split(/\s+/).pop().toLowerCase();
+      const match = results.find(b => b.author.toLowerCase().includes(authorLast));
+      if (match) return match;
+    }
+    return results[0];
+  } catch {
+    return null;
+  }
 }
 
 /* ============================================================
@@ -1858,12 +1974,21 @@ async function openBookDetail(book) {
         if (work.subjects) enriched.subjects = work.subjects.slice(0, 8);
         if (work.covers) enriched.coverId = work.covers[0];
       } catch {}
+
+      /* Open Library doesn't host readable text — look for a matching
+         Project Gutenberg edition so the Read Now button actually works */
+      const gutMatch = await findGutenbergEdition(enriched.title, enriched.author);
+      if (gutMatch) {
+        enriched.textUrl = gutMatch.textUrl;
+        enriched.gutId = gutMatch.gutId;
+        if (!enriched.gutCover) enriched.gutCover = gutMatch.gutCover;
+      }
     }
 
     STATE.currentBook = enriched;
     renderDetailPage(enriched);
   } catch(e) {
-    container.innerHTML = `<div class="error-state"><div class="err-icon">😕</div><h3>Couldn't load book details</h3><p>${e.message}</p></div>`;
+    container.innerHTML = `<div class="error-state"><div class="err-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg></div><h3>Couldn't load book details</h3><p>${e.message}</p></div>`;
   }
 }
 
@@ -1896,13 +2021,21 @@ function renderDetailPage(book) {
       </div>
     </div>` : '';
 
-  /* Read button — Gutenberg books can be read inline, OL books link out */
-  const canRead = !!book.textUrl || book.source === 'openlibrary';
+  /* Read button — only offered when we actually have full text available */
+  const canRead = !!(book.textUrl || book.gutId);
   const readBtn = canRead
     ? `<button class="btn-read" onclick="openReader(STATE.currentBook)">
          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
          ${progress ? 'Continue Reading' : 'Read Now'}
-       </button>` : '';
+       </button>`
+    : `<span class="detail-noread">
+         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path><line x1="5" y1="9" x2="8" y2="9"></line></svg>
+         Full text not available online for this edition
+       </span>
+       <button class="btn-fav-lg" onclick="searchGutenberg(${JSON.stringify(book.title)})">
+         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+         Search readable editions
+       </button>`;
 
   document.getElementById('detailContent').innerHTML = `
     <div class="detail-hero">
@@ -2006,26 +2139,22 @@ async function openReader(book) {
 
   let text = null;
 
-  /* 1. Gutenberg text URL */
+  /* 1. Known Gutenberg text URL (with CORS-proxy fallback) */
   if (book.textUrl) {
-    try {
-      const res = await fetch(book.textUrl);
-      if (res.ok) text = await res.text();
-    } catch {}
+    text = await fetchTextWithFallback(book.textUrl);
   }
 
-  /* 2. Try Gutenberg by gutId */
+  /* 2. Try common Gutenberg text file locations by ID */
   if (!text && book.gutId) {
     const variants = [
       `https://www.gutenberg.org/files/${book.gutId}/${book.gutId}-0.txt`,
       `https://www.gutenberg.org/files/${book.gutId}/${book.gutId}.txt`,
+      `https://www.gutenberg.org/cache/epub/${book.gutId}/pg${book.gutId}.txt`,
       `https://www.gutenberg.org/ebooks/${book.gutId}.txt.utf-8`,
     ];
     for (const url of variants) {
-      try {
-        const res = await fetch(url);
-        if (res.ok) { text = await res.text(); break; }
-      } catch {}
+      text = await fetchTextWithFallback(url);
+      if (text) break;
     }
   }
 
@@ -2033,7 +2162,7 @@ async function openReader(book) {
     document.getElementById('readerLoading').classList.add('hidden');
     document.getElementById('readerError').classList.remove('hidden');
     document.getElementById('readerErrorMsg').textContent =
-      'The full text of this book isn\'t available online. Try searching Project Gutenberg directly.';
+      'The full text of this book isn\'t available online right now. Try again shortly, or search for a different edition on Project Gutenberg.';
     return;
   }
 
@@ -2276,7 +2405,7 @@ function renderAnnotations() {
   }
   list.innerHTML = anns.slice().reverse().map(a => `
     <div class="ann-item">
-      <button class="ann-del-btn" onclick="deleteAnnotation(${JSON.stringify(bookId)}, ${a.id})" aria-label="Delete annotation">✕</button>
+      <button class="ann-del-btn" onclick="deleteAnnotation(${JSON.stringify(bookId)}, ${a.id})" aria-label="Delete annotation"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
       <div class="ann-quote">"${esc(truncate(a.quote, 120))}"</div>
       ${a.note ? `<div class="ann-note">${esc(a.note)}</div>` : ''}
       <div class="ann-meta">p.${a.page + 1} · ${new Date(a.createdAt).toLocaleDateString()}</div>
@@ -2412,7 +2541,7 @@ const SURPRISE_QUERIES = [
 
 async function surpriseMe() {
   const query = SURPRISE_QUERIES[Math.floor(Math.random() * SURPRISE_QUERIES.length)];
-  toast(`🎲 Showing you: ${query}`, 'info', 2000);
+  toast(`Showing you: ${query}`, 'info', 2000);
 
   try {
     const data = await apiFetch(`${CONFIG.OL_SEARCH}?q=${encodeURIComponent(query)}&limit=5&fields=key,title,author_name,first_publish_year,cover_i,subject,language`);

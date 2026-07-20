@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>OpenShelf — Discover & Read Free eBooks</title>
-<meta name="description" content="OpenShelf: Search, discover, and read thousands of free public domain books. Powered by ANICADE Tech.">
+<title>OpenShelf — Discover & Read Free Books</title>
+<meta name="description" content="OpenShelf: Search, discover, and read thousands of free public domain books. Powered by Open Library and Project Gutenberg.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -1044,6 +1044,76 @@ ul { list-style: none; }
 .ann-del-btn:hover { color: var(--red); }
 
 /* ============================================================
+   SITE FOOTER
+   ============================================================ */
+.site-footer {
+  border-top: 1px solid rgba(198,168,92,.14);
+  background: linear-gradient(180deg, transparent, rgba(0,191,255,.03));
+  padding: 3rem 0 0;
+  margin-top: 2rem;
+  position: relative; z-index: 1;
+}
+.site-footer.hidden { display: none !important; }
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 2rem;
+  padding-bottom: 2.5rem;
+}
+.footer-brand .logo-name { display: block; margin-bottom: .6rem; }
+.footer-tagline {
+  font-size: .84rem; color: var(--slate); line-height: 1.6;
+  max-width: 280px; margin-bottom: 1rem;
+}
+.footer-badge {
+  display: inline-flex; align-items: center; gap: .4rem;
+  font-size: .68rem; font-weight: 700; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--gold);
+  background: rgba(198,168,92,.08); border: 1px solid rgba(198,168,92,.2);
+  padding: .35rem .7rem; border-radius: 20px; font-family: var(--f-display);
+}
+.footer-badge svg { flex-shrink: 0; }
+.footer-col h4 {
+  font-family: var(--f-display); font-size: .7rem; font-weight: 700;
+  color: var(--cream); text-transform: uppercase; letter-spacing: .1em;
+  margin-bottom: .9rem;
+}
+.footer-col ul { display: flex; flex-direction: column; gap: .55rem; }
+.footer-col a, .footer-col span.footer-static {
+  font-size: .82rem; color: var(--slate-l); transition: color var(--t);
+  display: inline-flex; align-items: center; gap: .4rem;
+}
+.footer-col a:hover { color: var(--gold); }
+.footer-col svg { flex-shrink: 0; opacity: .7; }
+.footer-bottom {
+  border-top: 1px solid rgba(198,168,92,.1);
+  padding: 1.3rem 0;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: .8rem;
+}
+.footer-copy {
+  font-size: .76rem; color: var(--slate); font-family: var(--mono);
+}
+.footer-copy a { color: var(--gold); }
+.footer-copy a:hover { text-decoration: underline; }
+.footer-legal { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+.footer-legal a {
+  font-size: .74rem; color: var(--slate); transition: color var(--t);
+}
+.footer-legal a:hover { color: var(--gold); }
+
+@media (max-width: 900px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem 1.5rem; }
+}
+@media (max-width: 560px) {
+  .site-footer { padding-top: 2.2rem; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 1.8rem 1.2rem; padding-bottom: 1.8rem; }
+  .footer-brand { grid-column: 1 / -1; }
+  .footer-tagline { max-width: 100%; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; text-align: left; }
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 960px) {
@@ -1051,12 +1121,89 @@ ul { list-style: none; }
 }
 @media (max-width: 650px) {
   .detail-hero { grid-template-columns: 1fr; }
-  .detail-cover-wrap { max-width: 200px; }
+  .detail-cover-wrap { max-width: 200px; margin: 0 auto; }
   .hero h1 { font-size: 2rem; }
   .header-inner { gap: .6rem; }
   .books-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: .9rem; }
   .book-page { padding: 2rem 1.4rem; }
 }
+
+/* --- Header: stack logo/actions and let search take its own full row --- */
+@media (max-width: 720px) {
+  .header-inner { padding: .7rem 0; row-gap: .6rem; }
+  .logo { order: 1; }
+  .header-actions { order: 2; margin-left: auto; }
+  .search-bar { order: 3; flex-basis: 100%; min-width: 0; width: 100%; }
+  .btn-primary .desktop-only { display: none; }
+  .btn-primary { padding: .55rem .7rem; }
+}
+
+/* --- General mobile tightening --- */
+@media (max-width: 600px) {
+  .container { padding: 0 1rem; }
+  .hero { padding: 2.4rem 0 2rem; }
+  .hero-eyebrow { font-size: .6rem; letter-spacing: .22em; }
+  .hero-sub { font-size: .92rem; }
+  .hero-actions { flex-direction: column; align-items: stretch; gap: .6rem; }
+  .hero-actions .btn-surprise, .hero-actions .btn-ghost { width: 100%; justify-content: center; }
+  .hero-stats { gap: 1.2rem 1.6rem; margin-top: 2rem; padding-top: 1.4rem; }
+  .stat-val { font-size: 1.35rem; }
+
+  .cat-grid { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: .6rem; }
+  .cat-card { padding: .85rem .5rem; }
+  .cat-icon svg { width: 22px; height: 22px; }
+
+  .section-hd { flex-wrap: wrap; }
+
+  .results-header { padding: 1.3rem 0 1rem; }
+  .filter-bar { margin-left: 0; width: 100%; }
+  .filter-select { flex: 1; min-width: 0; }
+
+  /* Detail page actions stack for easy tapping */
+  .detail-actions { flex-direction: column; align-items: stretch; }
+  .detail-actions .btn-read,
+  .detail-actions .btn-fav-lg,
+  .detail-actions .btn-share-lg { width: 100%; justify-content: center; }
+  .detail-noread { flex-wrap: wrap; }
+  .detail-stats { gap: 1rem 1.4rem; }
+
+  /* Reader toolbar: wrap into rows instead of squeezing everything into one */
+  .reader-toolbar { padding: .55rem .8rem; justify-content: center; }
+  .reader-back { order: 1; }
+  .reader-book-info { order: 3; flex-basis: 100%; margin-top: .3rem; }
+  .reader-controls { order: 2; margin-left: auto; gap: .15rem; }
+  .reader-btn { width: 30px; height: 30px; }
+  .font-size-control { padding: .15rem .35rem; }
+  .font-size-btn { width: 22px; height: 22px; font-size: .7rem; }
+  .font-size-label { min-width: 1.4rem; font-size: .66rem; }
+
+  .book-page { padding: 1.4rem 1.1rem; min-height: 0; }
+  .page-content { font-size: calc(var(--reader-font-size) - 1px); }
+  .reader-book-container { padding: 1.2rem .5rem 2.5rem; }
+
+  .reader-nav { gap: .6rem; padding: 1rem; flex-wrap: wrap; }
+  .reader-nav-btn { padding: .55rem 1.1rem; font-size: .68rem; flex: 1; justify-content: center; }
+  .reader-page-info { min-width: 0; flex-basis: 100%; order: -1; margin-bottom: .3rem; }
+
+  .annotations-panel { width: min(300px, 88vw); }
+
+  /* Toasts must not overflow narrow viewports */
+  .toast-container { left: .75rem; right: .75rem; bottom: 1rem; align-items: stretch; }
+  .toast { max-width: 100%; }
+
+  .modal { padding: 1.4rem; }
+
+  .fav-actions { flex-direction: column; align-items: stretch; }
+  .fav-actions .btn-sm { width: 100%; text-align: center; }
+  .fav-stats { gap: 1.5rem; }
+}
+
+@media (max-width: 380px) {
+  .cat-grid { grid-template-columns: repeat(auto-fill, minmax(88px, 1fr)); }
+  .books-grid { grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); gap: .7rem; }
+  .hero h1 { font-size: 1.7rem; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
@@ -1309,7 +1456,7 @@ ul { list-style: none; }
     </div>
     <div id="readerError" class="reader-error hidden">
       <div class="err-icon"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path><line x1="5" y1="9" x2="8" y2="9" stroke-width="1.5"></line></svg></div>
-      <p id="readerErrorMsg">This book's text isn't available in your region yet. Try another book or come back later.</p>
+      <p id="readerErrorMsg">This book's text isn't available online yet. Try another format or come back later.</p>
       <button class="btn-sm primary" style="margin-top:1rem;" onclick="exitReader()">← Back to details</button>
     </div>
     <div class="book-spread hidden" id="bookSpread">
@@ -1398,6 +1545,66 @@ ul { list-style: none; }
     </div>
   </div>
 </main>
+
+<!-- ============================================================
+   SITE FOOTER
+   ============================================================ -->
+<footer class="site-footer" id="siteFooter">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-col footer-brand">
+        <span class="logo-name">Open<span>Shelf</span></span>
+        <p class="footer-tagline">Free access to millions of public domain books — search, read, and save classics right in your browser.</p>
+        <span class="footer-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+          100% Free Forever
+        </span>
+      </div>
+
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#" onclick="showView('home'); return false;">Home</a></li>
+          <li><a href="#" onclick="document.getElementById('mainSearch').focus(); return false;">Search Books</a></li>
+          <li><a href="#" onclick="showView('favorites'); return false;">My Library</a></li>
+          <li><a href="#" onclick="surpriseMe(); return false;">Surprise Me</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Sources</h4>
+        <ul>
+          <li><a href="https://openlibrary.org" target="_blank" rel="noopener">Open Library</a></li>
+          <li><a href="https://www.gutenberg.org" target="_blank" rel="noopener">Project Gutenberg</a></li>
+          <li><a href="https://gutendex.com" target="_blank" rel="noopener">Gutendex API</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Built By</h4>
+        <ul>
+          <li><a href="https://www.anicadetech.xyz" target="_blank" rel="noopener">ANICADE TECH</a></li>
+          <li><span class="footer-static">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            Kabwe, Zambia
+          </span></li>
+          <li><a href="mailto:anicadetech@gmail.com">anicadetech@gmail.com</a></li>
+          <li><a href="tel:+260777083995">+260 777 083 995</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 <a href="https://www.anicadetech.xyz" target="_blank" rel="noopener">ANICADE TECH</a>. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="https://www.anicadetech.xyz/terms.html" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://www.anicadetech.xyz/terms.html#privacy" target="_blank" rel="noopener">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
 <!-- ============================================================
    JAVASCRIPT
@@ -1657,13 +1864,17 @@ function showView(name) {
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   document.getElementById('viewReader').classList.remove('active');
 
+  const footer = document.getElementById('siteFooter');
+
   if (name === 'reader') {
     document.getElementById('viewReader').classList.add('active');
     document.getElementById('viewReader').style.display = 'flex';
+    if (footer) footer.classList.add('hidden');
   } else {
     document.getElementById('viewReader').style.display = '';
     const el = document.getElementById(`view${name.charAt(0).toUpperCase() + name.slice(1)}`);
     if (el) el.classList.add('active');
+    if (footer) footer.classList.remove('hidden');
   }
 
   if (name === 'favorites') renderFavoritesView();

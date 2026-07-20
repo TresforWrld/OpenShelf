@@ -1114,6 +1114,50 @@ ul { list-style: none; }
 }
 
 /* ============================================================
+   LEGAL PAGES (Privacy / Terms)
+   ============================================================ */
+.legal-view { padding: 2.5rem 0 4rem; }
+.legal-content {
+  max-width: 780px;
+  background: var(--card); border: 1px solid rgba(198,168,92,.12);
+  border-radius: var(--r-lg); padding: clamp(1.4rem, 4vw, 2.5rem);
+}
+.legal-content h1 {
+  font-family: var(--f-display); font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 900; color: var(--cream); text-transform: uppercase;
+  letter-spacing: .5px; margin-bottom: .4rem;
+}
+.legal-updated {
+  font-size: .78rem; color: var(--slate); font-family: var(--mono);
+  margin-bottom: 2rem; padding-bottom: 1.4rem;
+  border-bottom: 1px solid rgba(198,168,92,.1);
+}
+.legal-content h2 {
+  font-family: var(--f-display); font-size: .95rem; font-weight: 700;
+  color: var(--gold); text-transform: uppercase; letter-spacing: .5px;
+  margin: 1.8rem 0 .7rem;
+}
+.legal-content h2:first-of-type { margin-top: 0; }
+.legal-content p {
+  font-size: .92rem; line-height: 1.8; color: var(--slate-l);
+  margin-bottom: .9rem;
+}
+.legal-content ul { margin: .5rem 0 1rem 0; }
+.legal-content li {
+  font-size: .92rem; line-height: 1.8; color: var(--slate-l);
+  padding-left: 1.3rem; position: relative; margin-bottom: .4rem;
+}
+.legal-content li::before {
+  content: '';
+  position: absolute; left: 0; top: .75em;
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--gold);
+}
+.legal-content a { color: var(--ac); }
+.legal-content a:hover { text-decoration: underline; }
+.legal-content strong { color: var(--cream); }
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 960px) {
@@ -1546,6 +1590,111 @@ ul { list-style: none; }
   </div>
 </main>
 
+<!-- ─── PRIVACY POLICY VIEW ─── -->
+<main id="viewPrivacy" class="view" role="main">
+  <div class="container legal-view">
+    <button class="detail-back" onclick="showView('home')">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      Back to Home
+    </button>
+    <div class="legal-content">
+      <h1>Privacy Policy</h1>
+      <p class="legal-updated">Last updated: July 20, 2026</p>
+
+      <h2>Overview</h2>
+      <p>OpenShelf is a free book discovery and reading tool. This policy explains what information the app touches and how it's handled. OpenShelf does not have user accounts, does not run its own backend server, and does not sell or share personal data.</p>
+
+      <h2>Information Stored On Your Device</h2>
+      <p>OpenShelf saves the following data directly in your browser's local storage. It stays on your device and is never transmitted to OpenShelf or ANICADE Tech:</p>
+      <ul>
+        <li>Books you've saved to your favourites/library</li>
+        <li>Your reading progress and page position for each book</li>
+        <li>Personal annotations and notes you add while reading</li>
+        <li>Display preferences, such as font size and dark mode</li>
+        <li>Your recent search history, used only to power search suggestions</li>
+      </ul>
+      <p>Clearing your browser data, or using the "Clear All" option in your Library, permanently removes this information.</p>
+
+      <h2>Third-Party Services</h2>
+      <p>To find and display books, OpenShelf sends your search terms and requests to the following external, independently-operated services:</p>
+      <ul>
+        <li><strong>Open Library</strong> (openlibrary.org) — book search, metadata, and cover images</li>
+        <li><strong>Project Gutenberg</strong> (gutenberg.org) — full public-domain book text</li>
+        <li><strong>Gutendex</strong> (gutendex.com) — a catalog API for Project Gutenberg titles</li>
+      </ul>
+      <p>These requests are subject to the respective privacy practices of those services, which OpenShelf does not control. OpenShelf recommends reviewing their policies if you have concerns.</p>
+
+      <h2>What OpenShelf Does Not Do</h2>
+      <ul>
+        <li>No account creation, login, or password collection</li>
+        <li>No advertising trackers or ad networks</li>
+        <li>No selling or sharing of personal data with third parties</li>
+        <li>No server-side storage of your reading activity</li>
+      </ul>
+
+      <h2>Text-to-Speech</h2>
+      <p>The "Read Aloud" feature uses your browser's built-in speech synthesis. Book text is processed locally by your browser/operating system and is not sent to OpenShelf's or any third party's servers for this purpose.</p>
+
+      <h2>Children's Privacy</h2>
+      <p>OpenShelf does not knowingly collect personal information from anyone, including children, since no personal data is collected at all beyond what's described above.</p>
+
+      <h2>Changes to This Policy</h2>
+      <p>This policy may be updated occasionally to reflect changes to the app. Continued use of OpenShelf after a change constitutes acceptance of the updated policy.</p>
+
+      <h2>Contact</h2>
+      <p>OpenShelf is built and maintained by ANICADE Tech. Questions can be sent to <a href="mailto:anicadetech@gmail.com">anicadetech@gmail.com</a>.</p>
+    </div>
+  </div>
+</main>
+
+<!-- ─── TERMS OF SERVICE VIEW ─── -->
+<main id="viewTerms" class="view" role="main">
+  <div class="container legal-view">
+    <button class="detail-back" onclick="showView('home')">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      Back to Home
+    </button>
+    <div class="legal-content">
+      <h1>Terms of Service</h1>
+      <p class="legal-updated">Last updated: July 20, 2026</p>
+
+      <h2>Acceptance of Terms</h2>
+      <p>By using OpenShelf, you agree to these terms. If you don't agree, please don't use the app.</p>
+
+      <h2>What OpenShelf Is</h2>
+      <p>OpenShelf is a free tool for discovering and reading public domain books, sourced from Open Library and Project Gutenberg. OpenShelf does not host, own, or claim rights over any of the book content it displays — that content belongs to its respective public domain status or original rights holders.</p>
+
+      <h2>Free to Use</h2>
+      <p>OpenShelf is provided free of charge, with no subscriptions, paywalls, or purchases required.</p>
+
+      <h2>Content Accuracy</h2>
+      <p>Book metadata, covers, and text are pulled from third-party catalogs and may occasionally be incomplete, mismatched, or unavailable. OpenShelf makes no guarantee of accuracy or continuous availability of any particular title.</p>
+
+      <h2>Acceptable Use</h2>
+      <ul>
+        <li>Use OpenShelf for personal, lawful reading and research purposes</li>
+        <li>Don't attempt to disrupt, overload, or reverse-engineer the app or the third-party APIs it relies on</li>
+        <li>Don't use OpenShelf to redistribute content in violation of the rights associated with it</li>
+      </ul>
+
+      <h2>Third-Party Sources</h2>
+      <p>OpenShelf relies on Open Library, Project Gutenberg, and Gutendex to supply search results and book text. OpenShelf is not affiliated with, and does not control the availability, accuracy, or uptime of, these services.</p>
+
+      <h2>No Warranty</h2>
+      <p>OpenShelf is provided "as is," without warranties of any kind, express or implied. OpenShelf does not guarantee uninterrupted or error-free operation.</p>
+
+      <h2>Limitation of Liability</h2>
+      <p>To the fullest extent permitted by law, ANICADE Tech and OpenShelf shall not be liable for any indirect, incidental, or consequential damages arising from use of the app.</p>
+
+      <h2>Changes to These Terms</h2>
+      <p>These terms may be updated from time to time. Continued use of OpenShelf after changes are posted constitutes acceptance of the revised terms.</p>
+
+      <h2>Contact</h2>
+      <p>OpenShelf is built and maintained by ANICADE Tech. Questions can be sent to <a href="mailto:anicadetech@gmail.com">anicadetech@gmail.com</a>.</p>
+    </div>
+  </div>
+</main>
+
 <!-- ============================================================
    SITE FOOTER
    ============================================================ -->
@@ -1599,8 +1748,8 @@ ul { list-style: none; }
     <div class="footer-bottom">
       <p class="footer-copy">&copy; 2026 <a href="https://www.anicadetech.xyz" target="_blank" rel="noopener">ANICADE TECH</a>. All rights reserved.</p>
       <div class="footer-legal">
-        <a href="https://www.anicadetech.xyz/terms.html" target="_blank" rel="noopener">Terms of Service</a>
-        <a href="https://www.anicadetech.xyz/terms.html#privacy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="#" onclick="showView('terms'); return false;">Terms of Service</a>
+        <a href="#" onclick="showView('privacy'); return false;">Privacy Policy</a>
       </div>
     </div>
   </div>
@@ -1623,7 +1772,8 @@ const STATE = {
   searchQuery:     '',
   searchPage:      1,
   searchTotal:     0,
-  searchSource:    'openlibrary', /* 'openlibrary' | 'gutenberg' */
+  searchSource:    'openlibrary', /* 'openlibrary' | 'gutenberg' | 'subject' */
+  subjectSlug:     null,
   currentBook:     null,
   prevView:        'home',
   readerBook:      null,
@@ -1640,6 +1790,7 @@ const STATE = {
    ============================================================ */
 const CONFIG = {
   OL_SEARCH:   'https://openlibrary.org/search.json',
+  OL_SUBJECT:  'https://openlibrary.org/subjects/{slug}.json',
   OL_COVER:    'https://covers.openlibrary.org/b/id/{id}-M.jpg',
   OL_COVER_L:  'https://covers.openlibrary.org/b/id/{id}-L.jpg',
   OL_WORK:     'https://openlibrary.org/works/{id}.json',
@@ -1889,27 +2040,27 @@ function goBack() {
    CATEGORIES
    ============================================================ */
 const CATEGORIES = [
-  { name: 'Adventure', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 17.5L3 6V3h3l11.5 11.5"></path><path d="M13 19l6-6"></path><path d="M16 16l4 4"></path><path d="M19 21l2-2"></path></svg>', color: '#C6A85C', query: 'adventure' },
-  { name: 'Romance',   icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>', color: '#ff6a9d', query: 'romance' },
-  { name: 'Mystery',   icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>', color: '#00BFFF', query: 'mystery detective' },
-  { name: 'Science',   icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 2v6L4 20a1 1 0 0 0 1 2h14a1 1 0 0 0 1-2L15 8V2"></path><path d="M9 2h6"></path><path d="M8.5 14h7"></path></svg>', color: '#39ff14', query: 'science' },
-  { name: 'Philosophy',icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M12 2a7 7 0 0 0-4 12.7c.5.4.8 1 .8 1.6v.7h6.4v-.7c0-.6.3-1.2.8-1.6A7 7 0 0 0 12 2z"></path></svg>', color: '#C6A85C', query: 'philosophy' },
-  { name: 'History',   icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path><line x1="9" y1="7" x2="15" y2="7"></line></svg>', color: '#94A3B8', query: 'history' },
-  { name: 'Poetry',    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 4L9 15"></path><path d="M20 4c-4 0-11 1-14 6-1.7 2.8-1 6-1 6s3.2.7 6-1c5-3 6-10 6-10z"></path><path d="M8 16l-4 4"></path></svg>', color: '#C6A85C', query: 'poetry' },
-  { name: 'Horror',    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 10h.01"></path><path d="M15 10h.01"></path><path d="M12 2a8 8 0 0 0-8 8v10.5c0 .5.4.9.9.7l2-1 1.6 1.6c.3.3.8.3 1.1 0L12 20l2.4 1.8c.3.3.8.3 1.1 0l1.6-1.6 2 1c.5.2.9-.2.9-.7V10a8 8 0 0 0-8-8z"></path></svg>', color: '#7A4A9B', query: 'horror gothic' },
-  { name: 'Travel',    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>', color: '#00BFFF', query: 'travel exploration' },
-  { name: 'Biography', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>', color: '#FFB020', query: 'biography memoir' },
-  { name: 'Children',  icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>', color: '#00BFFF', query: 'children fairy tales' },
-  { name: 'Drama',     icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 3a2 2 0 0 1 2 2c0 4-3 5-3 9a4 4 0 0 1-8 0c0-4-3-5-3-9a2 2 0 0 1 2-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>', color: '#ff6a9d', query: 'drama plays Shakespeare' },
+  { name: 'Adventure', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 17.5L3 6V3h3l11.5 11.5"></path><path d="M13 19l6-6"></path><path d="M16 16l4 4"></path><path d="M19 21l2-2"></path></svg>', color: '#C6A85C', subject: 'adventure' },
+  { name: 'Romance',   icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>', color: '#ff6a9d', subject: 'romance' },
+  { name: 'Mystery',   icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>', color: '#00BFFF', subject: 'mystery_and_detective_stories' },
+  { name: 'Science',   icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 2v6L4 20a1 1 0 0 0 1 2h14a1 1 0 0 0 1-2L15 8V2"></path><path d="M9 2h6"></path><path d="M8.5 14h7"></path></svg>', color: '#39ff14', subject: 'science' },
+  { name: 'Philosophy',icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M12 2a7 7 0 0 0-4 12.7c.5.4.8 1 .8 1.6v.7h6.4v-.7c0-.6.3-1.2.8-1.6A7 7 0 0 0 12 2z"></path></svg>', color: '#C6A85C', subject: 'philosophy' },
+  { name: 'History',   icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path><line x1="9" y1="7" x2="15" y2="7"></line></svg>', color: '#94A3B8', subject: 'history' },
+  { name: 'Poetry',    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 4L9 15"></path><path d="M20 4c-4 0-11 1-14 6-1.7 2.8-1 6-1 6s3.2.7 6-1c5-3 6-10 6-10z"></path><path d="M8 16l-4 4"></path></svg>', color: '#C6A85C', subject: 'poetry' },
+  { name: 'Horror',    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 10h.01"></path><path d="M15 10h.01"></path><path d="M12 2a8 8 0 0 0-8 8v10.5c0 .5.4.9.9.7l2-1 1.6 1.6c.3.3.8.3 1.1 0L12 20l2.4 1.8c.3.3.8.3 1.1 0l1.6-1.6 2 1c.5.2.9-.2.9-.7V10a8 8 0 0 0-8-8z"></path></svg>', color: '#7A4A9B', subject: 'horror' },
+  { name: 'Travel',    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>', color: '#00BFFF', subject: 'travel' },
+  { name: 'Biography', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>', color: '#FFB020', subject: 'biography' },
+  { name: 'Children',  icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>', color: '#00BFFF', subject: 'juvenile_fiction' },
+  { name: 'Drama',     icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 3a2 2 0 0 1 2 2c0 4-3 5-3 9a4 4 0 0 1-8 0c0-4-3-5-3-9a2 2 0 0 1 2-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>', color: '#ff6a9d', subject: 'drama' },
 ];
 
 function renderCategories() {
   const grid = document.getElementById('categoryGrid');
   grid.innerHTML = CATEGORIES.map(cat => `
     <div class="cat-card" role="listitem" style="--color:${cat.color}"
-         onclick="searchBooks(${JSON.stringify(cat.query)})"
+         onclick="searchBySubject(${JSON.stringify(cat.subject)}, ${JSON.stringify(cat.name)})"
          tabindex="0"
-         onkeydown="if(event.key==='Enter')searchBooks(${JSON.stringify(cat.query)})"
+         onkeydown="if(event.key==='Enter')searchBySubject(${JSON.stringify(cat.subject)}, ${JSON.stringify(cat.name)})"
          aria-label="Browse ${cat.name} books">
       <div class="cat-icon" aria-hidden="true">${cat.icon}</div>
       <div class="cat-name">${esc(cat.name)}</div>
@@ -1980,9 +2131,92 @@ async function searchBooks(query, page = 1, append = false) {
   }
 }
 
+/* ============================================================
+   OPEN LIBRARY SUBJECT (GENRE) SEARCH
+   ============================================================ */
+async function searchBySubject(subjectSlug, displayName, page = 1, append = false) {
+  STATE.searchQuery = displayName;
+  STATE.subjectSlug = subjectSlug;
+  STATE.searchPage = page;
+  STATE.searchSource = 'subject';
+  showView('results');
+
+  document.getElementById('resultsTitle').textContent = `${displayName} Books`;
+  document.getElementById('resultsError').classList.add('hidden');
+  document.getElementById('resultsEmpty').classList.add('hidden');
+  document.getElementById('loadMoreBtn').classList.add('hidden');
+
+  if (!append) {
+    STATE.searchResults = [];
+    document.getElementById('resultsGrid').innerHTML = skeletonCards(12);
+    document.getElementById('resultsCount').textContent = '';
+  }
+  document.getElementById('resultsSpinner').classList.toggle('hidden', !append);
+
+  const limit = 20;
+  const offset = (page - 1) * limit;
+  const url = `${CONFIG.OL_SUBJECT.replace('{slug}', subjectSlug)}?limit=${limit}&offset=${offset}`;
+
+  try {
+    const data = await apiFetch(url);
+    STATE.searchTotal = data.work_count || 0;
+
+    const books = (data.works || []).map(normalizeSubjectWork);
+    STATE.searchResults = append ? [...STATE.searchResults, ...books] : books;
+
+    document.getElementById('resultsCount').textContent =
+      `${STATE.searchTotal.toLocaleString()} results`;
+
+    if (!append) document.getElementById('resultsGrid').innerHTML = '';
+    if (!books.length && !append) {
+      document.getElementById('resultsEmpty').classList.remove('hidden');
+      return;
+    }
+    books.forEach(b => {
+      const card = createBookCard(b);
+      document.getElementById('resultsGrid').appendChild(card);
+    });
+
+    const shown = STATE.searchResults.length;
+    if (shown < STATE.searchTotal) {
+      document.getElementById('loadMoreBtn').classList.remove('hidden');
+    }
+  } catch(e) {
+    if (!append) {
+      document.getElementById('resultsGrid').innerHTML = '';
+      document.getElementById('resultsError').classList.remove('hidden');
+      document.getElementById('resultsError').innerHTML = `
+        <div class="err-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div>
+        <h3>Couldn't load results</h3>
+        <p>${navigator.onLine ? 'The Open Library API had an issue. Try again in a moment.' : 'You appear to be offline.'}</p>
+        <button class="btn-sm primary" onclick="searchBySubject(${JSON.stringify(STATE.subjectSlug)}, ${JSON.stringify(STATE.searchQuery)})">Retry</button>`;
+    }
+  } finally {
+    document.getElementById('resultsSpinner').classList.add('hidden');
+  }
+}
+
+/** Normalize an Open Library subject "work" entry to our common schema */
+function normalizeSubjectWork(w) {
+  const id = w.key?.replace('/works/', '') || '';
+  return {
+    id:       id,
+    title:    w.title || 'Unknown Title',
+    author:   w.authors?.[0]?.name || 'Unknown Author',
+    year:     w.first_publish_year || null,
+    coverId:  w.cover_id || -1,
+    subjects: w.subject?.slice(0, 5) || [],
+    language: 'en',
+    pages:    null,
+    source:   'openlibrary',
+  };
+}
+
 function loadMoreResults() {
   if (STATE.searchSource === 'gutenberg') {
     searchGutenberg(STATE.searchQuery, true);
+  } else if (STATE.searchSource === 'subject') {
+    searchBySubject(STATE.subjectSlug, STATE.searchQuery, STATE.searchPage + 1, true);
   } else {
     searchBooks(STATE.searchQuery, STATE.searchPage + 1, true);
   }
@@ -2701,7 +2935,7 @@ function showAutocomplete(query) {
     const matchedCats = CATEGORIES.filter(c => c.name.toLowerCase().includes(q)).slice(0, 3);
     items = [
       ...matchedRecent.map(s => ({ type: 'recent', text: s })),
-      ...matchedCats.map(c => ({ type: 'category', text: c.query, label: c.name })),
+      ...matchedCats.map(c => ({ type: 'category', text: c.name, label: c.name, subject: c.subject })),
     ].slice(0, 7);
   }
 
@@ -2709,7 +2943,9 @@ function showAutocomplete(query) {
 
   list.innerHTML = items.map((item, i) => `
     <li class="autocomplete-item" role="option" id="ac-${i}" tabindex="-1"
-        onclick="pickAutocomplete(${JSON.stringify(item.text)})">
+        onclick="${item.type === 'category'
+          ? `pickAutocompleteCategory(${JSON.stringify(item.subject)}, ${JSON.stringify(item.text)})`
+          : `pickAutocomplete(${JSON.stringify(item.text)})`}">
       ${item.type === 'recent'
         ? `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>`
         : `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle></svg>`}
@@ -2731,6 +2967,13 @@ function pickAutocomplete(query) {
   document.getElementById('mainSearch').value = query;
   document.getElementById('autocompleteList').classList.add('hidden');
   doSearch(query);
+}
+
+function pickAutocompleteCategory(subjectSlug, displayName) {
+  document.getElementById('mainSearch').value = displayName;
+  document.getElementById('autocompleteList').classList.add('hidden');
+  addRecentSearch(displayName);
+  searchBySubject(subjectSlug, displayName);
 }
 
 function doSearch(query) {
